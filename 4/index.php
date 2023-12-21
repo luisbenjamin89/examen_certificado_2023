@@ -1,8 +1,17 @@
 <?php
-// Genera un valor entre 1 y 100, y muestra si es par o si es impar
 
-//Aquí genero el valor
+function password($length)
+{
+    $key = "";
+    $pattern = "1234567890abcdefghijklmnopqrstuvwxyz";
+    $max = strlen($pattern)-1;
+    for($i = 0; $i < $length; $i++){
+        $key .= substr($pattern, rand(0,$max), 1);
+    }
+    return $key;
+}
 
+$msj=password(8)
 
 ?>
 <!doctype html>
@@ -24,7 +33,7 @@
 <form action="index.php" method="post">
     <input type="submit" value="Genera Password" name="submit">
 </form>
-
+<h1><?= $msj?></h1>
 </fieldset>
 </body>
 </html>

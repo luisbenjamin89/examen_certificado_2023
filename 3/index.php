@@ -1,18 +1,4 @@
-<?php
-/*
-// Haz un programa que
-      cree 10 notas aleatorias,
-      las guardes en una array
-      las visualice de una en una con el siguiente formato:
-(Los valores, o sea el 8,9,9, son ejemplos, tienen que ser los valores aleatorios que crees)
-//Nota 0: 8
-//Nota 1: 9
-//Nota 2: 9
-*/
 
-
-
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,6 +15,21 @@
 
 <h1>
 <!--    Si no te lía mucho, deberías de visualizarlo aquí  -->
+    <?php
+    $nota=[];
+    for($i=0;$i<10;$i++)
+    {
+        $numeros=rand(1,100);
+        $nota[$i]=$numeros;
+        $posicion=$i+1;
+        echo "Nota $posicion : $nota[$i]<br>";
+    }
+
+
+
+
+
+    ?>
 </h1>
 
 </body>

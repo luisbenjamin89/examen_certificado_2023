@@ -1,7 +1,22 @@
 <?php
-// Genera un valor entre 1 y 100, y muestra si es par o si es impar
+include "funciones.php";
+$operacion=$_POST['operador'] ?? "";
+$N1=$_POST['op1'] ?? "";
+$N2=$_POST['op2'] ?? "";
 
-//Aquí genero el valor
+switch ($operacion)
+{
+    case "+": $msj =sumar($N1,$N2) ;
+    break;
+
+    case "-": $msj =restar($N1,$N2) ;
+        break;
+    case "*": $msj =multiplicar($N1,$N2) ;
+        break;
+    case "/": $msj =dividir($N1,$N2) ;
+        break;
+}
+
 
 
 ?>
@@ -18,7 +33,7 @@
 <body>
 
 <a style="%;color:darkblue;size:2rem" href="./../index.php">Volver</a>
-
+<form  action='index.php' method='POST'>
 <fieldset>
     <legend>Calculadora</legend>
     <input type="text" name="op1" id="" placeholder="Operador 1">
@@ -28,11 +43,13 @@
         <option value="*">*</option>
         <option value="/">/</option>
     </select>
-    <input type="text" name="op1" id="" placeholder="Operador 2">
+    <input type="text" name="op2" id="" placeholder="Operador 2">
     <input type="submit" value="Opearar" value="submit">
 </fieldset>
+</form>
+
 <h1>
-<!--    Aquí el resultado -->
+El resultado es : <?=$msj?>
 </h1>
 
 </body>

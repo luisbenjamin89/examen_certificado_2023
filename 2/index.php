@@ -2,7 +2,15 @@
 // Genera un valor entre 1 y 100, y muestra si es par o si es impar
 
 //Aquí genero el valor
+$numero =rand(1,100);
 
+if (($numero % 2) == 0) {
+    //Es un número par
+    $msj ="El numero $numero Es un número par";
+} else {
+    //Es un número impar
+    $msj ="El numero $numero Es un número impar";
+}
 
 ?>
 <!doctype html>
@@ -21,6 +29,7 @@
 
 <h1>
 <!--    Aquí lo visualizo  -->
+    <?=$msj?>
 </h1>
 
 </body>
